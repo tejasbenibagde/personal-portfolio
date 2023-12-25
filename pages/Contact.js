@@ -1,7 +1,7 @@
 import React from 'react'
 import transition from './pagetransition'
 import Image from 'next/image'
-import profile from '../../images/profile.jpg'
+import profile from '@/public/images/profile.jpg'
 import Form from './components/pageComponents/contact/Form'
 
 const Contact = () => {
@@ -23,6 +23,7 @@ const Contact = () => {
                   alt={"image"}
                   src={profile}
                   style={{objectFit: 'cover'}}
+                  sizes="(max-width: 768px) 30vw, (max-width: 1200px) 40vw, 33vw"
                 />
               </div>
               <h2 className="text-[var(--white)] text-[10vw] md:text-[6vw] font-[400] leading-[11vw] tracking-[-0.2vw] md:leading-[6vw] lg:text-[4vw] lg:leading-[4.2vw]">Let's start a</h2>

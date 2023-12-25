@@ -1,10 +1,10 @@
 import Image from 'next/image';
-import { useRef, useEffect, useState } from 'react';
-import { motion as m, useAnimation, useScroll, useTransform } from 'framer-motion';
+import { useRef, useEffect} from 'react';
+import { motion as m, useAnimation } from 'framer-motion';
 
 
 //image
-import profile from '../../../images/profile.jpg';
+import profile from '@/public/images/profile.jpg';
 
 
 
@@ -29,7 +29,7 @@ function Hero() {
     return (
         <div className='hero-section'>
             <div className='hero-image'>
-                <Image src={profile} alt='profile' fill={true} style={{objectFit: 'cover'}} className='profile-image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" />
+                <Image src={profile} alt='profile' fill={true} style={{objectFit: 'cover'}} className='profile-image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
             </div>
             <div className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
                 <m.div ref={slider} className='flex relative whitespace-nowrap' animate={sliderControls}>

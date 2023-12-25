@@ -2,8 +2,8 @@
 
 import Image from "next/image";
 
-import weather from '../../../images/projects/WeatherCaster.PNG';
-import geo from '../../../images/projects/GeoDataCentral.png';
+import weather from '@/public/images/projects/WeatherCaster.PNG';
+import geo from '@/public/images/projects/GeoDataCentral.PNG';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from "react";
 
@@ -51,6 +51,7 @@ function MiniProjects() {
                                         alt="weather"
                                         className="w-full"
                                         style={{objectFit: 'cover'}}
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
                                     />
                                 </div>
                                 <h2 className="text-[8vw] md:text-[4vw] font-[500] my-3">{title}</h2>

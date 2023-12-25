@@ -38,8 +38,8 @@ export default function MiniAbout() {
         }
     }
     const minidata = {
-        maindata: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque illo quisquam eos velit commodi hic odit amet ducimus assumenda. Placeat, atque.',
-        subdata: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam doloremque illo quisquam eos velit.'
+        maindata: "Hello I'm Tejas, a passionate web developer based in India, I specialize in crafting engaging and responsive web experiences. Let's build something amazing together!",
+        subdata: 'Passionate web developer offering expertise in creating engaging and efficient digital experiences. Elevate your online presence with my skills!'
     }
     const description = useRef(null);
     const isInView = useInView(description)

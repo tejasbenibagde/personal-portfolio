@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import profile from '../../../images/profile.jpg';
+import profile from '@/public/images/profile.jpg';
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from 'framer-motion';

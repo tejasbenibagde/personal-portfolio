@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import Image from "next/image";
-import profile from '../../../images/profile.jpg';
+import profile from '@/public/images/profile.jpg';
 import Rounded from "../../buttons/roundedButton/Rounded";
 import SemiRound from "../../buttons/semiroundedButtons/SemiRound";
 
