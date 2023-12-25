@@ -1,0 +1,19 @@
+/* sm	640px	@media (min-width: 640px) { ... }
+md	768px	@media (min-width: 768px) { ... }
+lg	1024px	@media (min-width: 1024px) { ... }
+xl	1280px	@media (min-width: 1280px) { ... }
+2xl	1536px	@media (min-width: 1536px) { ... } */
+
+
+.home-page{
+    @apply relative h-full w-[100vw] z-10
+}
+.hero-section{
+    @apply h-[110vh] w-full;
+}
+.hero-image{
+    @apply absolute h-full w-full z-0;
+}
+.profile-image{
+    @apply object-cover brightness-[0.8] z-0 flex;
+}

@@ -1,0 +1,49 @@
+/* 
+sm	640px	@media (min-width: 640px) { ... }
+md	768px	@media (min-width: 768px) { ... }
+lg	1024px	@media (min-width: 1024px) { ... }
+xl	1280px	@media (min-width: 1280px) { ... }
+2xl	1536px	@media (min-width: 1536px) { ... }
+*/
+
+
+.header {
+    @apply absolute w-[100vw] h-[13.5vh] md:h-[10vh] flex items-center justify-between px-[5vw] z-[100];
+}
+
+.logo {
+    @apply cursor-pointer relative flex;
+}
+
+.header-item {
+    @apply text-[4vw] md:text-[2.7vw] lg:text-[1.6vw] xl:text-[1.2vw] font-[500] text-[var(--white)];
+}
+
+.headerButtonContainer {
+    @apply fixed right-0 z-[120]
+}
+
+.headerButton {
+    @apply relative m-[5vw] md:m-[3.5vw] xl:m-[2vw] 2xl:m-[1.6vw] w-[15vw] h-[15vw] bg-black rounded-full md:h-[10vw] md:w-[10vw] lg:h-[7vw] lg:w-[7vw] xl:h-[5vw] xl:w-[5vw] 
+}
+
+.burger {
+    @apply relative h-full w-full flex flex-col items-center justify-center cursor-pointer
+}
+.burger-bar {
+    @apply absolute h-[1px] w-[40%] bg-white
+}
+
+.burger-closed .burger-bar:nth-child(1){
+    @apply translate-y-[-0.55vw] md:translate-y-[-0.45vw] lg:translate-y-[-0.35vw] xl:translate-y-[-0.3vw];
+}
+.burger-closed .burger-bar:nth-child(2){
+    @apply translate-y-[0.55vw] md:translate-y-[0.45vw] lg:translate-y-[0.35vw] xl:translate-y-[0.3vw];
+}
+
+
+
+/* slider menu */
+.slider-menu {
+    @apply h-[100vh] w-[100vw] md:w-[60vw] lg:w-[40vw]
+}
