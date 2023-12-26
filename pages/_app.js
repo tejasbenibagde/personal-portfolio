@@ -1,7 +1,7 @@
+
 import '@/styles/globals.css';
 import '@/styles/Header.css';
 import '@/styles/Home.css';
-
 import { AnimatePresence } from 'framer-motion';
 
 //fonts
@@ -19,14 +19,21 @@ export const metadata = {
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer';
 
+import Smoothscroll from './Smoothscroll';
+
+
+
+
 export default function App({ Component, pageProps, router }) {
   return (
     <div id='main-wrapper' className={inter.className}>
-      <Header />
-      <AnimatePresence mode='wait'>
-        <Component key={router.pathname} {...pageProps} />
-      </AnimatePresence>
-      <Footer />
+      <Smoothscroll>
+        <Header />
+        <AnimatePresence mode='wait'>
+          <Component key={router.pathname} {...pageProps} />
+        </AnimatePresence>
+        <Footer />
+      </Smoothscroll>
     </div>
   )
 }

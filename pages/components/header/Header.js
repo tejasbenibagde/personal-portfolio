@@ -1,9 +1,7 @@
 'use client'
 
 //dependencies
-import gsap from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion as m, useAnimation } from 'framer-motion';
 
@@ -11,6 +9,7 @@ import Link from 'next/link';
 
 //components
 import NavSlider from './NavSlider';
+import Magnet from '../magnet/Magnet';
 
 export default function Header() {
 
@@ -76,7 +75,9 @@ export default function Header() {
         <>
             <div ref={header} className="header">
                 <div className="logo">
-                    <h1 className="header-item" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }}><Link href={'/'}>@ Code by Tejas</Link></h1>
+                    <Magnet>
+                        <h1 className="header-item" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }}><Link href={'/'}>@ Code by Tejas</Link></h1>
+                    </Magnet>
                 </div>
                 <div className="navigation">
                     <h1 className="header-item md:hidden" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }} onClick={() => setActive(!isActive)}>
@@ -87,9 +88,11 @@ export default function Header() {
                             navItems.map((data, index) => {
                                 const { title, href } = data;
                                 return index !== 0 ? (
-                                    <Link key={index} href={href} className="header-item" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }}>
-                                        {title}
-                                    </Link>
+                                    <Magnet>
+                                        <Link key={index} href={href} className="header-item" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }}>
+                                            {title}
+                                        </Link>
+                                    </Magnet>
                                 ) : null;
                             })
                         }

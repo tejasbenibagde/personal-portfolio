@@ -1,5 +1,6 @@
 import Rounded from "../../buttons/roundedButton/Rounded";
 import React from "react";
+import Magnet from "../../magnet/Magnet";
 function Form() {
 
     const formContent = [
@@ -55,9 +56,11 @@ function Form() {
                 </div>
                 <div className="bg-red relative flex items-center justify-center mt-[10vh]">
                     <div className="z-[1] w-full flex justify-end items-center px-[5vw] lg:px-[10vw] h-[30vw]">
-                        <Rounded cursor={true}>
-                            <button type='submit' className='text-[var(--black)] text-[4vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] 2xl:text-[1vw] '>Send it!</button>
-                        </Rounded>
+                        <Magnet>
+                            <Rounded cursor={true}>
+                                <button type='submit' className='text-[var(--black)] text-[4vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] 2xl:text-[1vw] '>Send it!</button>
+                            </Rounded>
+                        </Magnet>
                     </div>
                     <div className="z-[0] absolute w-full h-[1px] bg-[var(--white)] opacity-[0.5]" />
                 </div>

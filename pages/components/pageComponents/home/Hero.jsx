@@ -2,20 +2,23 @@ import Image from 'next/image';
 import { useRef, useEffect} from 'react';
 import { motion as m, useAnimation } from 'framer-motion';
 
+import useParallax from '@/pages/customHooks/useParallax';
 
 //image
 import profile from '@/public/images/profile.jpg';
 
 
-
 function Hero() {
     const slider = useRef(null);
+    const container = useRef(null);
+
+    let y = useParallax(-0.2, container);
 
     const sliderControls = useAnimation();
 
     useEffect(() => {
         sliderControls.start({
-            x: '-340%',
+            x: '-300%',
             transition: {
                 duration: 100,
                 ease: 'linear',
@@ -27,11 +30,11 @@ function Hero() {
 
 
     return (
-        <div className='hero-section'>
+        <div className='hero-section' ref={container}>
             <div className='hero-image'>
                 <Image src={profile} alt='profile' fill={true} style={{objectFit: 'cover'}} className='profile-image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
             </div>
-            <div className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
+            <m.div style={{y:y}} className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
                 <m.div ref={slider} className='flex relative whitespace-nowrap' animate={sliderControls}>
                     <p className='text-[35vw] md:text-[20vw] lg:text-[16vw] xl:text-[14vw] 2xl:text-[12vw] text-[var(--white)]'>
                         Tejas Benibagde -
@@ -46,8 +49,8 @@ function Hero() {
                         Tejas Benibagde -
                     </p>
                 </m.div>
-            </div>
-            <div className='absolute w-[90vw] top-[87vh] md:top-[50vh] flex px-[5vw] md:justify-end'>
+            </m.div>
+            <m.div style={{y:y}} className='absolute w-[90vw] top-[87vh] md:top-[50vh] flex px-[5vw] md:justify-end'>
                 <div>
                     <svg
                         className='w-[6vw] md:h-[2vw] h-[6vw] mb-[2vh] md:w-[2vw] lg:w-[1vw] lg:h-[1vw] xl:h-[0.7vw] xl:w-[0.7vw]'
@@ -61,7 +64,7 @@ function Hero() {
                     </svg>
                     <h2 className='text-[var(--white)] text-[5.5vw] md:text-[4vw] lg:text-[2.5vw] xl:text-[2.2vw] 2xl:text-[2vw]'>Full stack <br />web developer</h2>
                 </div>
-            </div>
+            </m.div>
         </div>
     );
 }

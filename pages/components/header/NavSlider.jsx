@@ -40,7 +40,7 @@ export default function NavSlider() {
             flex flex-col justify-between"
         >
             <div>
-                <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[1.5vw] lg:text-[1vw] xl:text-[0.8vw] 2xl:text-[0.7vw]'>LOCATION</h1>
+                <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[1.5vw] lg:text-[1vw] xl:text-[0.8vw] 2xl:text-[0.7vw]'>NAVIGATION</h1>
                 <div className='h-[1px] w-full bg-[var(--white)] opacity-[0.5] my-[1vh]' />
                 <div className='px-5'>
                     {
