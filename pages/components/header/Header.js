@@ -37,7 +37,7 @@ export default function Header() {
     const header = useRef(null);
 
     const [isActive, setActive] = useState(false);
-
+    
     const buttonControls = useAnimation();
     const closebuttonControls = useAnimation();
 
@@ -56,6 +56,7 @@ export default function Header() {
         } else {
             buttonControls.start({ scale: 1 });
         }
+
     };
 
     useEffect(() => {

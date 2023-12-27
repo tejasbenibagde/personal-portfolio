@@ -2,6 +2,7 @@
 
 import { motion as m } from 'framer-motion';
 import Link from "next/link";
+import Magnet from '../magnet/Magnet';
 export default function NavSlider() {
 
     const navItems = [
@@ -42,13 +43,17 @@ export default function NavSlider() {
             <div>
                 <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[1.5vw] lg:text-[1vw] xl:text-[0.8vw] 2xl:text-[0.7vw]'>NAVIGATION</h1>
                 <div className='h-[1px] w-full bg-[var(--white)] opacity-[0.5] my-[1vh]' />
-                <div className='px-5'>
+                <div className='px-5 flex flex-col'>
                     {
                         navItems.map((data, index) => {
                             const { title, href } = data;
                             return (
                                 <Link key={index} href={href}>
-                                    <p className="text-[var(--white)] text-[13.5vw] md:text-[7vw] lg:text-[5vw] xl:text-[3vw] 2xl:[2vw]">{title}</p>
+                                    <div className="px-[1vw] inline-block ">
+                                        <Magnet>
+                                            <p className='py-[0.1vh] text-[var(--white)] text-[13.5vw] md:text-[7vw] lg:text-[5vw] xl:text-[3vw] 2xl:[2vw]'>{title}</p>
+                                        </Magnet>
+                                    </div>
                                 </Link>
                             )
                         })
@@ -60,8 +65,12 @@ export default function NavSlider() {
                 <div className='h-[1px] w-full bg-[var(--white)] opacity-[0.5]' />
                 <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[1.5vw] lg:text-[1vw] xl:text-[0.8vw] 2xl:text-[0.7vw]'>SOCIALS</h1>
                 <div className='flex gap-[3vw]'>
-                    <a href="https://www.linkedin.com/in/tejas-benibagde-457700220/" className='text-[var(--white)] text-[4.2vw] md:text-[3.7vw] lg:text-[2vw] xl:text-[1.4vw] 2xl:text-[1.2vw]'>LinkedIn</a>
-                    <a href='https://github.com/tejasbenibagde' className='text-[var(--white)] text-[4.2vw] md:text-[3.7vw] lg:text-[2vw] xl:text-[1.4vw] 2xl:text-[1.2vw]'>Github</a>
+                    <Magnet>
+                        <a href="https://www.linkedin.com/in/tejas-benibagde-457700220/" className='text-[var(--white)] text-[4.2vw] md:text-[3.7vw] lg:text-[2vw] xl:text-[1.4vw] 2xl:text-[1.2vw]'>LinkedIn</a>
+                    </Magnet>
+                    <Magnet>
+                        <a href='https://github.com/tejasbenibagde' className='text-[var(--white)] text-[4.2vw] md:text-[3.7vw] lg:text-[2vw] xl:text-[1.4vw] 2xl:text-[1.2vw]'>Github</a>
+                    </Magnet>
                 </div>
             </div>
         </m.div>

@@ -9,7 +9,7 @@ xl	1280px	@media (min-width: 1280px) { ... }
     @apply relative h-full w-[100vw] z-10
 }
 .hero-section{
-    @apply h-[110vh] w-full;
+    @apply h-[110vh] w-full relative overflow-hidden;
 }
 .hero-image{
     @apply absolute h-full w-full z-0;

@@ -15,7 +15,7 @@ const Magnet = ({ children }) => {
     }
 
     const mouseLeave = (e) => {
-        setPosition({ x: 0, y: 0})
+        setPosition({ x: 0, y: 0 })
     }
 
 
@@ -27,7 +27,7 @@ const Magnet = ({ children }) => {
             onMouseMove={mouseMove}
             onMouseLeave={mouseLeave}
             animate={{ x, y }}
-            className="flex items-center justify-center relative"
+            className="flex box-border items-center justify-center relative"
         >
             {children}
         </m.div>

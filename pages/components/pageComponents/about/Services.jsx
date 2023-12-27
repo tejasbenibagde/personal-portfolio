@@ -3,7 +3,8 @@ import Image from "next/image";
 import profile from '@/public/images/profile.jpg';
 
 import { useRef } from "react";
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion as m, useScroll, useTransform } from 'framer-motion';
+import useParallax from "@/pages/customHooks/useParallax";
 
 function Services() {
 
@@ -15,6 +16,9 @@ function Services() {
     })
 
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 60])
+
+    let y = useParallax(0.1, container, true);
+
 
     const services = [
         {
@@ -37,18 +41,18 @@ function Services() {
 
     return (
         <>
-            <div className="lg:flex lg:justify-between">
-                <motion.div ref={container} className='flex flex-col gap-[4vh] md:px-[5vw] lg:w-[35vw] lg:gap-[2vw]'>
+            <div ref={container} className="lg:flex lg:justify-between">
+                <m.div style={{ y: y }} className='flex flex-col gap-[4vh] md:px-[5vw] lg:w-[35vw] lg:gap-[2vw]'>
                     <div className='relative h-[10vw] w-[10vw] md:h-[2.5vw] md:w-[2.5vw] flex items-center justify-center rotate-[-90deg] lg:absolute lg:translate-x-[-4vw]'>
-                        <motion.svg style={{ rotate }} className='absolute w-[5vw] h-[5vw] md:w-[2.5vw] md:h-[2.5vw] lg:h-[1.7vw] lg:w-[1.7vw]' viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <m.svg style={{ rotate }} className='absolute w-[5vw] h-[5vw] md:w-[2.5vw] md:h-[2.5vw] lg:h-[1.7vw] lg:w-[1.7vw]' viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M8 8.5C8.27614 8.5 8.5 8.27614 8.5 8L8.5 3.5C8.5 3.22386 8.27614 3 8 3C7.72386 3 7.5 3.22386 7.5 3.5V7.5H3.5C3.22386 7.5 3 7.72386 3 8C3 8.27614 3.22386 8.5 3.5 8.5L8 8.5ZM0.646447 1.35355L7.64645 8.35355L8.35355 7.64645L1.35355 0.646447L0.646447 1.35355Z" fill="#272829" />
-                        </motion.svg>
+                        </m.svg>
                     </div>
-                    <>
+                    <m.div style={{ y: y }}>
                         <h1 className='text-[4vw] md:text-[2vw] lg:text-[1.4vw] xl:text-[1.2vw] text-[var(--black)]'>I enjoy working with imaginative layouts and web components, constantly creating and experimenting. I thrive on challenges and love trying new things.</h1>
                         <h1 className="text-[var(--black)] text-[4vw] md:text-[2vw] lg:text-[1.4vw] xl:text-[1.2vw] opacity-[0.5]">Always Exploring ...</h1>
-                    </>
-                </motion.div>
+                    </m.div>
+                </m.div>
                 <div className='relative mt-[5vh] h-[80vh] lg:h-[65vw] w-full lg:w-[55vw] lg:mt-0'>
                     <Image
                         src={profile}

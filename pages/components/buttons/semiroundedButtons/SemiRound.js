@@ -1,8 +1,8 @@
 import React from 'react'
 
-function SemiRound({ children,classes }) {
+function SemiRound({ children,classes, onClick }) {
     return (
-        <div className={classes}>
+        <div className={classes} onClick={onClick}>
             {children}
         </div>
     )

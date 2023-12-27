@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { useRef, useEffect} from 'react';
+import { useRef, useEffect } from 'react';
 import { motion as m, useAnimation } from 'framer-motion';
 
 import useParallax from '@/pages/customHooks/useParallax';
@@ -13,6 +13,7 @@ function Hero() {
     const container = useRef(null);
 
     let y = useParallax(-0.2, container);
+    let y2 = useParallax(0.1, container);
 
     const sliderControls = useAnimation();
 
@@ -32,9 +33,11 @@ function Hero() {
     return (
         <div className='hero-section' ref={container}>
             <div className='hero-image'>
-                <Image src={profile} alt='profile' fill={true} style={{objectFit: 'cover'}} className='profile-image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
+                <m.div style={{ y: y2 }} className='w-full h-full top-0 left-0'>
+                    <Image src={profile} alt='profile' fill={true} style={{ objectFit: 'cover' }} className='profile-image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
+                </m.div>
             </div>
-            <m.div style={{y:y}} className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
+            <m.div style={{ y: y }} className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
                 <m.div ref={slider} className='flex relative whitespace-nowrap' animate={sliderControls}>
                     <p className='text-[35vw] md:text-[20vw] lg:text-[16vw] xl:text-[14vw] 2xl:text-[12vw] text-[var(--white)]'>
                         Tejas Benibagde -
@@ -50,7 +53,7 @@ function Hero() {
                     </p>
                 </m.div>
             </m.div>
-            <m.div style={{y:y}} className='absolute w-[90vw] top-[87vh] md:top-[50vh] flex px-[5vw] md:justify-end'>
+            <m.div style={{ y: y }} className='absolute w-[90vw] top-[87vh] md:top-[50vh] flex px-[5vw] md:justify-end'>
                 <div>
                     <svg
                         className='w-[6vw] md:h-[2vw] h-[6vw] mb-[2vh] md:w-[2vw] lg:w-[1vw] lg:h-[1vw] xl:h-[0.7vw] xl:w-[0.7vw]'

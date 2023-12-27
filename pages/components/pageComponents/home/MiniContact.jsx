@@ -8,10 +8,25 @@ import SemiRound from "../../buttons/semiroundedButtons/SemiRound";
 import Link from "next/link";
 
 import { motion as m, useScroll, useTransform } from 'framer-motion';
-import useParallax from "@/pages/customHooks/useParallax";
 import Magnet from "../../magnet/Magnet";
 
 function MiniContact() {
+
+    const handleEmailClick = () => {
+        const gmailAddress = 'tejas.benibagde@gmail.com';
+        const subject = "Let's Connect";
+        const body = 'Hi Tejas,\n\nI came across your portfolio and would like to get in touch.';
+        const gmailComposeUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(gmailAddress)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(gmailComposeUrl, '_blank');
+    };
+
+    const handlePhoneClick = () => {
+        const phoneNumber = '+918261092799';
+        const telUrl = `tel:${phoneNumber}`;
+
+        window.open(telUrl, '_blank');
+    };
+
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -58,11 +73,15 @@ function MiniContact() {
                         <div className="z-[0] absolute w-full h-[1px] bg-[var(--white)] opacity-[0.5]" />
                     </div>
                     <div className="mt-[10vw] md:mt-[5vh] xl:mt-0 flex flex-col gap-[5vw] lg:gap-[3vw] md:flex-row ">
-                        <SemiRound classes={'w-full md:w-auto px-[4vw] lg:px-[3vw] xl:px-[2.6vw] flex items-center justify-center border-[1px] border-[#fffbee76] rounded-[10vw] py-[5vw] md:py-[3vw] xl:py-[1.7vw] 2xl:py-[1.4vw] lg:py-[2vw]'}>
-                            <p className="text-[var(--white)] text-[4.2vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.2vw]">tejas.benibagde@gmail.com</p>
+                        <SemiRound
+                            onClick={handleEmailClick}
+                            classes={'cursor-pointer w-full md:w-auto px-[4vw] lg:px-[3vw] xl:px-[2.6vw] flex items-center justify-center border-[1px] border-[#fffbee76] rounded-[10vw] py-[5vw] md:py-[3vw] xl:py-[1.7vw] 2xl:py-[1.4vw] lg:py-[2vw]'}>
+                            <p className="cursor-pointer text-[var(--white)] text-[4.2vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.2vw]">tejas.benibagde@gmail.com</p>
                         </SemiRound>
-                        <SemiRound classes={'w-full md:w-auto px-[4vw] lg:px-[3vw] xl:px-[2.6vw] flex items-center justify-center border-[1px] border-[#fffbee76] rounded-[10vw] py-[5vw] md:py-[3vw] xl:py-[1.7vw] 2xl:py-[1.4vw] lg:py-[2vw]'}>
-                            <p className="text-[var(--white)] text-[4.2vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.2vw]">+91 82 61 09 27 99</p>
+                        <SemiRound
+                            onClick={handlePhoneClick}
+                            classes={'cursor-pointer w-full md:w-auto px-[4vw] lg:px-[3vw] xl:px-[2.6vw] flex items-center justify-center border-[1px] border-[#fffbee76] rounded-[10vw] py-[5vw] md:py-[3vw] xl:py-[1.7vw] 2xl:py-[1.4vw] lg:py-[2vw]'}>
+                            <p className="cursor-pointer text-[var(--white)] text-[4.2vw] md:text-[2vw] lg:text-[1.7vw] xl:text-[1.2vw]" >+91 82 61 09 27 99</p>
                         </SemiRound>
                     </div>
                 </div>
