@@ -3,7 +3,7 @@
 import Rounded from "../../buttons/roundedButton/Rounded";
 import { useInView, motion as m } from "framer-motion";
 import { useRef } from "react";
-import useParallax from "@/pages/customHooks/useParallax";
+import useParallax from "@/pages/customHooks/useparallax";
 import Link from "next/link";
 import Magnet from "../../magnet/Magnet";
 
