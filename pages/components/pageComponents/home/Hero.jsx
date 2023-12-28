@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useRef, useEffect } from 'react';
 import { motion as m, useAnimation } from 'framer-motion';
 
-import useParallax from '@/pages/customHooks/useparallax';
+import useParallax from '@/pages/customHooks/useParallax';
 
 //image
 import profile from '@/public/images/profile.jpg';

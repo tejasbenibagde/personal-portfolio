@@ -4,7 +4,7 @@ import profile from '@/public/images/profile.jpg';
 
 import { useRef } from "react";
 import { motion as m, useScroll, useTransform } from 'framer-motion';
-import useParallax from "@/pages/customHooks/useparallax";
+import useParallax from "@/pages/customHooks/useParallax";
 
 function Services() {
 
