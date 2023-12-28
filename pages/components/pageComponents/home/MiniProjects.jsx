@@ -41,7 +41,7 @@ function MiniProjects() {
         <>
             <div className="relative w-[100vw] px-[5vw] mt-[5vh] flex flex-col flex-wrap md:flex-row md:justify-between items-center">
                 {
-                    project.map((project, index ) => {
+                    project.map((project, index) => {
                         const { color, src, title, date, attribute } = project;
                         return (
                             <div key={index} className="w-[100%] md:w-[42.5vw]">
@@ -50,8 +50,11 @@ function MiniProjects() {
                                         src={src}
                                         alt="weather"
                                         className="w-full"
-                                        style={{objectFit: 'cover'}}
-                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                                        style={{ objectFit: 'cover' }}
+                                        loading="lazy"
+                                        blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAQAAAD9CzEMAAABmElEQVR42mJ0LgjAIA6B1KkwivxJGEGbBM6ikQbEDMTjQEozsBI8QMyM4RDJnAmO8g8EJcAIQcLMIDoL5K2ODPAN88b0vYeEvAg9n39A42mCWzD/KYVsBFIAAAAAAAAAAA+Ay/QT4UFBPAQAAAABJRU5ErkJggg=="
+                                        placeholder="blur"
+                                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 70vw, 50vw"
                                     />
                                 </div>
                                 <h2 className="text-[8vw] md:text-[4vw] font-[500] my-3">{title}</h2>
@@ -65,7 +68,7 @@ function MiniProjects() {
                     })
                 }
             </div>
-            <motion.div ref={container} style={{height}} className="relative w-full z-[10]">
+            <motion.div ref={container} style={{ height }} className="relative w-full z-[10]">
                 <div className="h-[140%] w-[120%] translate-x-[-10%] rounded-b-[80%] bg-[var(--white)]" />
             </motion.div>
         </>

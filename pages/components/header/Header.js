@@ -37,7 +37,7 @@ export default function Header() {
     const header = useRef(null);
 
     const [isActive, setActive] = useState(false);
-    
+
     const buttonControls = useAnimation();
     const closebuttonControls = useAnimation();
 
@@ -85,19 +85,18 @@ export default function Header() {
                         Menu
                     </h1>
                     <div className='hidden gap-[3vw] md:flex'>
-                        {
-                            navItems.map((data, index) => {
-                                const { title, href } = data;
-                                return index !== 0 ? (
-                                    <Magnet>
-                                        <Link key={index} href={href} className="header-item" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }}>
-                                            {title}
-                                        </Link>
-                                    </Magnet>
-                                ) : null;
-                            })
-                        }
+                        {navItems.map((data, index) => {
+                            const { title, href } = data;
+                            return index !== 0 ? (
+                                <Magnet key={index}>
+                                    <Link href={href} className="header-item" style={{ color: (pathname === '/' || pathname === '/Contact') ? '#fffbee' : '#272829' }}>
+                                        {title}
+                                    </Link>
+                                </Magnet>
+                            ) : null;
+                        })}
                     </div>
+
                 </div>
             </div>
             <m.div

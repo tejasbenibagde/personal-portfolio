@@ -33,8 +33,16 @@ function Hero() {
     return (
         <div className='hero-section' ref={container}>
             <div className='hero-image'>
-                <m.div style={{ y: y2 }} className='w-full h-full top-0 left-0'>
-                    <Image src={profile} alt='profile' fill={true} style={{ objectFit: 'cover' }} className='profile-image' sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw" />
+                <m.div style={{ y: y2 }} className='relative w-full h-full top-0 left-0'>
+                    <Image
+                        src={profile}
+                        alt='profile'
+                        fill={true}
+                        placeholder='blur'
+                        priority={true}
+                        className='profile-image'
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                    />
                 </m.div>
             </div>
             <m.div style={{ y: y }} className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
