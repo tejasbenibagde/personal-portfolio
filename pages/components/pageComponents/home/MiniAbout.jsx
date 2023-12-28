@@ -1,9 +1,8 @@
 'use client'
 
 import Rounded from "../../buttons/roundedButton/Rounded";
-import { useInView, motion as m } from "framer-motion";
-import { useRef } from "react";
-import useParallax from "@/pages/customHooks/useParallax";
+import { useInView, motion as m, useScroll, useTransform } from "framer-motion";
+import { useRef, useEffect, useState} from "react";
 import Link from "next/link";
 import Magnet from "../../magnet/Magnet";
 
@@ -44,6 +43,36 @@ export default function MiniAbout() {
         maindata: "Hello I'm Tejas, a passionate web developer based in India, I specialize in crafting engaging and responsive web experiences. Let's build something amazing together!",
         subdata: 'Passionate web developer offering expertise in creating engaging and efficient digital experiences. Elevate your online presence with my skills!'
     }
+
+
+    const useDimension = () => {
+        const [dimension, setDimension] = useState({ width: 0, height: 0 });
+
+        const updateDimension = () => {
+            const { innerWidth, innerHeight } = window;
+            setDimension({ width: innerWidth, height: innerHeight });
+        }
+
+        useEffect(() => {
+            updateDimension();
+
+            window.addEventListener('resize', updateDimension);
+
+            return () => { window.removeEventListener('resize', updateDimension) };
+        }, [])
+        return dimension;
+    }
+
+    function useParallax(value, container, initial = false) {
+        const { height } = useDimension();
+        const { scrollYProgress } = useScroll({
+            target: container,
+            offset: [`${initial ? 'start' : 'end'} end`, 'end start']
+        });
+
+        return useTransform(scrollYProgress, [0, 1], [0, height * value])
+    }
+
     const description = useRef(null);
     const isInView = useInView(description);
 

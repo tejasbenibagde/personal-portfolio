@@ -2,11 +2,40 @@ import React from "react";
 import Image from "next/image";
 import profile from '@/public/images/profile.jpg';
 
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion as m, useScroll, useTransform } from 'framer-motion';
-import useParallax from "@/pages/customHooks/useParallax";
 
 function Services() {
+
+    const useDimension = () => {
+        const [dimension, setDimension] = useState({ width: 0, height: 0 });
+
+        const updateDimension = () => {
+            const { innerWidth, innerHeight } = window;
+            setDimension({ width: innerWidth, height: innerHeight });
+        }
+
+        useEffect(() => {
+            updateDimension();
+
+            window.addEventListener('resize', updateDimension);
+
+            return () => { window.removeEventListener('resize', updateDimension) };
+        }, [])
+        return dimension;
+    }
+
+    function useParallax(value, container, initial = false) {
+        const { height } = useDimension();
+        const { scrollYProgress } = useScroll({
+            target: container,
+            offset: [`${initial ? 'start' : 'end'} end`, 'end start']
+        });
+
+        return useTransform(scrollYProgress, [0, 1], [0, height * value])
+    }
+
+
 
     const container = useRef(null);
 
