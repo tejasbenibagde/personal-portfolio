@@ -14,6 +14,7 @@ function MiniProjects() {
         {
             src: weather,
             title: 'Weather Caster',
+            url: 'https://weather-caster.netlify.app',
             attribute: 'Design & Development',
             date: '2023',
             color: '#272829'
@@ -21,11 +22,15 @@ function MiniProjects() {
         {
             src: geo,
             title: 'GeoDataCentral',
+            url: 'https://geodatacentral.netlify.app',
             attribute: 'Design & Development',
             date: '2023',
             color: '#61677A'
         }
     ];
+    const handleProjectClick = (url) => {
+        window.open(url);
+    };
 
 
     const container = useRef(null);
@@ -42,9 +47,9 @@ function MiniProjects() {
             <div className="relative w-[100vw] px-[5vw] mt-[5vh] flex flex-col flex-wrap md:flex-row md:justify-between items-center">
                 {
                     project.map((project, index) => {
-                        const { color, src, title, date, attribute } = project;
+                        const { color, src, url, title, date, attribute } = project;
                         return (
-                            <div key={index} className="w-[100%] md:w-[42.5vw]">
+                            <div key={index} onClick={() => handleProjectClick(url)} className="cursor-pointer w-[100%] md:w-[42.5vw]">
                                 <div style={{ backgroundColor: color }} className="w-[100%] md:h-[40vw] md:w-[42.5vw] h-[90vw] px-[5vw] flex items-center justify-center ">
                                     <Image
                                         src={src}

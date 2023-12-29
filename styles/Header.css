@@ -31,7 +31,7 @@ xl	1280px	@media (min-width: 1280px) { ... }
     @apply relative h-full w-full flex flex-col items-center justify-center cursor-pointer
 }
 .burger-bar {
-    @apply absolute h-[1px] w-[40%] bg-white
+    @apply absolute h-[1px] w-[40%] bg-[var(--white)]
 }
 
 .burger-closed .burger-bar:nth-child(1){
@@ -45,5 +45,6 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
 /* slider menu */
 .slider-menu {
-    @apply h-[100vh] w-[100vw] md:w-[60vw] lg:w-[40vw]
+    @apply h-[100vh] w-[100vw] md:w-[60vw] lg:w-[40vw];
+    box-shadow: -1rem 0 2rem #00000040;
 }

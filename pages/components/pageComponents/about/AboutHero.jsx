@@ -3,7 +3,7 @@ import Rounded from "../../buttons/roundedButton/Rounded";
 
 function AboutHero() {
 
-    
+
 
     return (
         <>
@@ -21,8 +21,6 @@ function AboutHero() {
                 </div>
                 <div className="z-[0] absolute w-full h-[1px] bg-[var(--black)] opacity-[0.5]" />
             </div>
-
-            
         </>
     )
 }

@@ -20,7 +20,4 @@ const About = () => {
   )
 }
 
-
-
-
 export default transition(About)

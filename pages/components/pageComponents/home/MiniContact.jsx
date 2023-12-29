@@ -44,10 +44,11 @@ function MiniContact() {
                         <div className='relative w-[12vw] h-[12vw] md:w-[7vw] md:h-[7vw] xl:w-[5vw] xl:h-[5vw] rounded-full overflow-hidden'>
                             <Image
                                 fill={true}
-                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                                 alt={"image"}
                                 src={profile}
                                 style={{ objectFit: 'cover' }}
+                                priority={false}
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                             />
                         </div>
                         <h2 className="text-[var(--white)] text-[10.5vw] md:text-[5vw] xl:text-[5.8vw] lg:leading-[5.8vw]">Let's work</h2>
