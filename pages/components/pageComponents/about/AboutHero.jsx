@@ -1,3 +1,4 @@
+import Device from "../../animations/deviceloader/Device";
 import Rounded from "../../buttons/roundedButton/Rounded";
 
 
@@ -14,7 +15,7 @@ function AboutHero() {
             <div className="bg-red relative flex items-center justify-center md:px-[5vw] lg:px-[10vw]">
                 <div className="z-[1] w-full flex justify-end items-center px-[5vw] h-[30vw] md:h-[25vw]">
                     <Rounded bg={'var(--black)'} >
-                        <p className="text-[var(--white)]">...</p>
+                        <Device />
                     </Rounded>
                     <div className="translate-y-[-25vw]">
                     </div>

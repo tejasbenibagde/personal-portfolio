@@ -1,0 +1,103 @@
+.device_container {
+    @apply w-[60%] h-[60%] flex items-center justify-center;
+}
+
+.device_container .loader {
+    position: absolute;
+    z-index: 10;
+    height: 45%;
+    width: 75%;
+    border-radius: 5px;
+    background: var(--white);
+    animation: dot1_ 3s cubic-bezier(0.55, 0.3, 0.24, 0.99) infinite;
+}
+
+.device_container .loader:nth-child(2) {
+    z-index: 11;
+    height: 40%;
+    width: 70%;
+    border-radius: 3px;
+    background: var(--gray);
+    animation-name: dot2_;
+}
+
+.device_container .loader:nth-child(3) {
+    z-index: 12;
+    height: 20px;
+    width: 40px;
+    border-radius: 0 0 5px 5px;
+    background: var(--white);
+    animation-name: dot3_;
+}
+
+@keyframes dot1_ {
+
+    0%,
+    100% {
+        height: 45%;
+        width: 75%;
+    }
+
+    30%,
+    36% {
+        height: 65%;
+        width: 45%;
+    }
+
+    63%,
+    69% {
+        height: 40%;
+        width: 23%;
+    }
+}
+
+@keyframes dot2_ {
+
+    0%,
+    100% {
+        height: 40%;
+        width: 70%;
+    }
+
+    30%,
+    36% {
+        height: 50%;
+        width: 40%;
+    }
+
+    63%,
+    69% {
+        height: 30%;
+        width: 18%;
+    }
+}
+
+
+@keyframes dot3_ {
+
+    0%,
+    100% {
+        height: 5%;
+        width: 10%;
+        margin-top: 50%;
+        background: var(--white);
+    }
+
+    30%,
+    36% {
+        height: 5%;
+        width: 5%;
+        border-radius: 8px;
+        margin-top: 58%;
+        background: var(--black);
+    }
+    
+    63%,
+    69% {
+        height: 2%;
+        width: 7.5%;
+        border-radius: 10px;
+        margin-top: -34%;
+        background: var(--black);
+    }
+}
