@@ -2,10 +2,10 @@
 
 function Device() {
     return (
-        <div class="device_container">
-            <div class="loader" />
-            <div class="loader" />
-            <div class="loader" />
+        <div className="device_container">
+            <div className="loader" />
+            <div className="loader" />
+            <div className="loader" />
         </div>
     );
 };

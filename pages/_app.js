@@ -40,13 +40,12 @@ export default function App({ Component, pageProps, router }) {
         <title>Tejas Benibagde</title>
       </Head>
       <div id='main-wrapper' className={inter.className}>
-        <Smoothscroll>
-          <Header />
-          <AnimatePresence mode='wait'>
-            <Component key={router.pathname} {...pageProps} />
-          </AnimatePresence>
-          <Footer />
-        </Smoothscroll>
+        <Smoothscroll />
+        <Header />
+        <AnimatePresence mode='wait'>
+          <Component key={router.pathname} {...pageProps} />
+        </AnimatePresence>
+        <Footer />
       </div>
     </>
   )
