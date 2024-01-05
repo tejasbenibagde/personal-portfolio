@@ -10,10 +10,10 @@ xl	1280px	@media (min-width: 1280px) { ... }
 
 :root {
     --pink: #F9E8D9;
-    /* --pink: #fad3c1; */
     --white: #fffbee;
     --gray: #8f8d7a;
     --purple: #9E9FA5;
+    --primary-black: #0f0f0f;
     --black: #272829;
     --dark-blue: #61677A;
 }
@@ -31,7 +31,7 @@ xl	1280px	@media (min-width: 1280px) { ... }
     display: none;
 }
 
-*::selection{
+*::selection {
     background: var(--dark-blue);
     color: var(--white);
 }
@@ -46,7 +46,7 @@ xl	1280px	@media (min-width: 1280px) { ... }
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #0f0f0f;
+    background: var(--primary-black);
     transform-origin: bottom;
 }
 
@@ -56,6 +56,6 @@ xl	1280px	@media (min-width: 1280px) { ... }
     left: 0;
     width: 100%;
     height: 100vh;
-    background: #0f0f0f;
+    background: var(--primary-black);
     transform-origin: top;
 }

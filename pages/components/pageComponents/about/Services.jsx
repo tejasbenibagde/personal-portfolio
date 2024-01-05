@@ -89,6 +89,9 @@ function Services() {
                         src={profile}
                         alt='profile'
                         style={{ objectFit: 'cover', layout: 'fill' }}
+                        priority={false}
+                        loading="lazy"
+                        placeholder="blur"
                         className='brightness-[0.95]'
                     />
                 </div>

@@ -91,7 +91,7 @@
         margin-top: 58%;
         background: var(--black);
     }
-    
+
     63%,
     69% {
         height: 2%;
@@ -99,5 +99,100 @@
         border-radius: 10px;
         margin-top: -34%;
         background: var(--black);
+    }
+}
+
+
+
+/* contact loader */
+.spinner {
+    @apply w-[12vw] h-[12vw];
+    animation: spinner-y0fdc1 2s infinite ease;
+    transform-style: preserve-3d;
+}
+
+.spinner>div {
+    background-color: var(--purple);
+    opacity: 0.4;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    border: 2px solid var(--dark-blue);
+}
+
+.spinner div:nth-of-type(1) {
+    transform: translateZ(-6vw) rotateY(180deg);
+}
+
+.spinner div:nth-of-type(2) {
+    transform: translateZ(6vw);
+}
+
+@media screen and (min-width: 768px) {
+
+    .spinner {
+        @apply w-[6vw] h-[6vw];
+        animation: spinner-y0fdc1 2s infinite ease;
+        transform-style: preserve-3d;
+    }
+
+    .spinner div:nth-of-type(1) {
+        transform: translateZ(-3vw) rotateY(180deg);
+    }
+
+    .spinner div:nth-of-type(2) {
+        transform: translateZ(3vw);
+    }
+
+}
+
+@media screen and (min-width: 1024px) {
+
+    .spinner {
+        @apply w-[4vw] h-[4vw];
+    }
+
+    .spinner div:nth-of-type(1) {
+        transform: translateZ(-2vw) rotateY(180deg);
+    }
+
+    .spinner div:nth-of-type(2) {
+        transform: translateZ(2vw);
+    }
+
+}
+
+.spinner div:nth-of-type(3) {
+    transform: rotateY(270deg) translateX(-50%);
+    transform-origin: center left;
+}
+
+.spinner div:nth-of-type(4) {
+    transform: rotateX(90deg) translateY(-50%);
+    transform-origin: top center;
+}
+
+.spinner div:nth-of-type(5) {
+    transform: rotateX(-90deg) translateY(50%);
+    transform-origin: bottom center;
+}
+
+.spinner div:nth-of-type(6) {
+    transform: rotateY(-270deg) translateX(50%);
+    transform-origin: top right;
+}
+
+
+@keyframes spinner-y0fdc1 {
+    0% {
+        transform: rotate(45deg) rotateX(-25deg) rotateY(25deg);
+    }
+
+    50% {
+        transform: rotate(45deg) rotateX(-385deg) rotateY(25deg);
+    }
+
+    100% {
+        transform: rotate(45deg) rotateX(-385deg) rotateY(385deg);
     }
 }

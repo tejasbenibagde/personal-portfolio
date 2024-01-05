@@ -24,14 +24,14 @@ xl	1280px	@media (min-width: 1280px) { ... }
 }
 
 .headerButton {
-    @apply relative m-[5vw] md:m-[3.5vw] xl:m-[2vw] 2xl:m-[1.6vw] w-[15vw] h-[15vw] bg-black rounded-full md:h-[10vw] md:w-[10vw] lg:h-[7vw] lg:w-[7vw] xl:h-[5vw] xl:w-[5vw] 
+    @apply relative m-[5vw] md:m-[3.5vw] xl:m-[2vw] 2xl:m-[1.6vw] w-[15vw] h-[15vw] bg-purple-200 rounded-full md:h-[10vw] md:w-[10vw] lg:h-[7vw] lg:w-[7vw] xl:h-[5vw] xl:w-[5vw] 
 }
 
 .burger {
     @apply relative h-full w-full flex flex-col items-center justify-center cursor-pointer
 }
 .burger-bar {
-    @apply absolute h-[1px] w-[40%] bg-[var(--white)]
+    @apply absolute h-[1px] w-[40%] bg-[var(--black)]
 }
 
 .burger-closed .burger-bar:nth-child(1){

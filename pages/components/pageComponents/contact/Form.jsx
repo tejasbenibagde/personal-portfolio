@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 import Rounded from "../../buttons/roundedButton/Rounded";
 import Magnet from "../../magnet/Magnet";
+import Loader from "../../animations/contactloader/Loader";
 
 
 function Form() {
@@ -12,10 +17,14 @@ function Form() {
         company: "",
         message: ""
     });
+
+    const [loader, setLoader] = useState(false);
+
     const formContent = [
         {
             count: '01',
             value: userData.name,
+            autoComplete: 'name',
             name: 'name',
             question: "What's your name ?",
             placeholder: "John Doe *",
@@ -24,6 +33,7 @@ function Form() {
         {
             count: '02',
             value: userData.email,
+            autoComplete: 'email',
             name: 'email',
             question: "What's your email ?",
             placeholder: "john@doe.com *",
@@ -51,6 +61,7 @@ function Form() {
     const submitData = async (event) => {
 
         event.preventDefault();
+        setLoader(true);
 
         const { name, email, company, message } = userData;
 
@@ -68,7 +79,8 @@ function Form() {
                 }
             );
             if (res.ok) {
-                alert("Message Sent Successfully!!");
+                setLoader(false)
+                toast("Message sent Successfully!");
                 setUserData({
                     name: "",
                     email: "",
@@ -76,20 +88,32 @@ function Form() {
                     message: ""
                 })
             } else {
-                alert("Something Went Wrong!!");
+                setLoader(false)
+                toast.error('Something Went Wrong!!!');
             }
         }
         else {
-            alert("Fill in all the fields!!");
+            setLoader(false)
+            toast.warn('Fill in all the fields!!');
         }
     };
 
     return (
         <>
+            <ToastContainer position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="light" />
             <form method="POST" className='py-[5vh] bg-[var(--black)]'>
                 {
                     formContent.map((data, index) => {
-                        const { count, value, name, question, placeholder, type } = data;
+                        const { count, value, autoComplete, name, question, placeholder, type } = data;
                         const uniqueKey = `formItem_${index}`;
 
                         return (
@@ -99,7 +123,7 @@ function Form() {
                                     <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[1.2vw] 2xl:text-[0.8vw] w-5'>{count}</h1>
                                     <div className='flex flex-col gap-[3vh]'>
                                         <h1 className='text-[var(--white)] text-[4vw] md:text-[3vw]'>{question}</h1>
-                                        <input type={type} name={name} required={true} placeholder={placeholder} value={value} onChange={postUserData} className='bg-[var(--black)] text-[3vw] md:text-[2vw] lg:text-[1.4vw] xl:text-[1.2vw] 2xl:text-[1vw] outline-none text-[var(--white)] w-full' />
+                                        <input type={type} name={name} required={true} placeholder={placeholder} value={value} onChange={postUserData} autoComplete={autoComplete ? autoComplete : 'off'} className='bg-[var(--black)] text-[3vw] md:text-[2vw] lg:text-[1.4vw] xl:text-[1.2vw] 2xl:text-[1vw] outline-none text-[var(--white)] w-full' />
                                     </div>
                                 </div>
                             </React.Fragment>
@@ -111,7 +135,7 @@ function Form() {
                     <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[2vw] lg:text-[1.5vw] xl:text-[1.2vw] 2xl:text-[0.8vw] w-5'>04</h1>
                     <div className='flex flex-col gap-[3vh]'>
                         <h1 className='text-[var(--white)] text-[4vw] md:text-[3vw]'>Your message</h1>
-                        <textarea type='text' rows={2} cols={10} name="message" required={true} value={userData.message} onChange={postUserData} placeholder='Hello Tejas, can you help me with ... *' className='bg-[var(--black)] text-[3vw] md:text-[2vw] lg:text-[1.4vw] xl:text-[1.2vw] 2xl:text-[1vw] outline-none text-[var(--white)] w-[calc(80vw)] max-w-[80vw] h-auto' />
+                        <textarea type='text' rows={2} cols={10} name="message" required={true} value={userData.message} onChange={postUserData} autoComplete="off" placeholder='Hello Tejas, can you help me with ... *' className='bg-[var(--black)] text-[3vw] md:text-[2vw] lg:text-[1.4vw] xl:text-[1.2vw] 2xl:text-[1vw] outline-none text-[var(--white)] w-[calc(80vw)] max-w-[80vw] h-auto' />
                     </div>
                 </div>
                 <div className="bg-red relative flex items-center justify-center mt-[10vh]">
@@ -119,9 +143,17 @@ function Form() {
                         <Magnet>
                             <Rounded
                                 cursor={true}>
-                                <button type='submit' onClick={submitData} className='text-[var(--black)] text-[4vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] 2xl:text-[1vw] '>
-                                    Send it!
-                                </button>
+                                {
+                                    loader ?
+                                        (
+                                            <Loader />
+                                        ) :
+                                        (
+                                            <button type='submit' onClick={submitData} className='text-[var(--black)] w-full h-full text-[4vw] md:text-[2.5vw] lg:text-[2vw] xl:text-[1.5vw] 2xl:text-[1vw] '>
+                                                Send it!
+                                            </button>
+                                        )
+                                }
                             </Rounded>
                         </Magnet>
                     </div>

@@ -20,7 +20,7 @@ function Footer() {
                 <div className='flex flex-col gap-[1.7vh]'>
                     <h1 className='text-[var(--white)] opacity-[0.5] font-[400] text-[3vw] md:text-[1.6vw] lg:text-[1vw] xl:text-[0.8vw] 2xl:text-[0.7vw]'>VERSION</h1>
                     <div className='flex gap-[3vw]'>
-                        <p className='text-[var(--white)] text-[4.2vw] md:text-[2.2vw] lg:text-[1.8vw] xl:text-[1.4vw] 2xl:text-[1vw]'>v-0.0.1 @2023</p>
+                        <p className='text-[var(--white)] text-[4.2vw] md:text-[2.2vw] lg:text-[1.8vw] xl:text-[1.4vw] 2xl:text-[1vw]'>v-0.1.0 @2023</p>
                     </div>
                 </div>
                 <div className='flex flex-col gap-[1.7vh]'>
