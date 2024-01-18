@@ -36,7 +36,7 @@ function Hero() {
         return useTransform(scrollYProgress, [0, 1], [0, height * value])
     }
 
-
+    const { width } = useDimension();
     const slider = useRef(null);
     const container = useRef(null);
 
@@ -61,7 +61,7 @@ function Hero() {
     return (
         <div className='hero-section' ref={container}>
             <div className='hero-image'>
-                <m.div style={{ y: y2 }} className='relative w-full h-full top-0 left-0'>
+                <m.div style={width > 768 ? { y: y2 } : null} className='relative w-full h-full top-0 left-0'>
                     <Image
                         src={profile}
                         alt='profile'
@@ -73,7 +73,7 @@ function Hero() {
                     />
                 </m.div>
             </div>
-            <m.div style={{ y: y }} className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
+            <m.div style={width > 768 ? { y: y } : null} className='absolute top-[50vh] md:top-[75vh] lg:top-[70vh] left-0'>
                 <m.div ref={slider} className='flex relative whitespace-nowrap' animate={sliderControls}>
                     <p className='text-[35vw] md:text-[20vw] lg:text-[16vw] xl:text-[14vw] 2xl:text-[12vw] text-[var(--white)]'>
                         Tejas Benibagde -
@@ -89,7 +89,7 @@ function Hero() {
                     </p>
                 </m.div>
             </m.div>
-            <m.div style={{ y: y }} className='absolute w-[90vw] top-[87vh] md:top-[50vh] flex px-[5vw] md:justify-end'>
+            <m.div style={width > 768 ? { y: y } : null} className='absolute w-[90vw] top-[87vh] md:top-[50vh] flex px-[5vw] md:justify-end'>
                 <div>
                     <svg
                         className='w-[6vw] md:h-[2vw] h-[6vw] mb-[2vh] md:w-[2vw] lg:w-[1vw] lg:h-[1vw] xl:h-[0.7vw] xl:w-[0.7vw]'

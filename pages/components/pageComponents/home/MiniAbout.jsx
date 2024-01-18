@@ -2,7 +2,7 @@
 
 import Rounded from "../../buttons/roundedButton/Rounded";
 import { useInView, motion as m, useScroll, useTransform } from "framer-motion";
-import { useRef, useEffect, useState} from "react";
+import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 import Magnet from "../../magnet/Magnet";
 
@@ -40,7 +40,7 @@ export default function MiniAbout() {
         }
     }
     const minidata = {
-        maindata: "Hello I'm Tejas, a passionate web developer based in India, I specialize in crafting engaging and responsive web experiences. Let's build something amazing together!",
+        maindata: "Hello I'm Tejas, a web developer based in India, I specialize in crafting engaging and responsive web experiences. Let's build something amazing together!",
         subdata: 'Passionate web developer offering expertise in creating engaging and efficient digital experiences. Elevate your online presence with my skills!'
     }
 

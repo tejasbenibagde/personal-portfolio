@@ -18,6 +18,7 @@ function Form() {
         message: ""
     });
 
+
     const [loader, setLoader] = useState(false);
 
     const formContent = [
@@ -50,6 +51,7 @@ function Form() {
     ];
 
     let name, value;
+
     const postUserData = (event) => {
         name = event.target.name;
         value = event.target.value;
