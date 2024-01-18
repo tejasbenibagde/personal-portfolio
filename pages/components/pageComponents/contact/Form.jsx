@@ -69,7 +69,7 @@ function Form() {
 
         if (name && email && company && message) {
             const res = await fetch(
-                'https://portfolio-a6190-default-rtdb.firebaseio.com/userData.json',
+                'ENTER YOUR OWN LINK TO CONNECT TO FIREBASE',
                 {
                     method: 'POST',
                     headers: {
