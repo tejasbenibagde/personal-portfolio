@@ -1,35 +1,33 @@
-
-import '@/styles/globals.css';
-import '@/styles/Header.css';
-import '@/styles/Home.css';
-import '@/styles/animations.css';
-import { AnimatePresence } from 'framer-motion';
-import Head from 'next/head';
+import "@/styles/globals.css";
+import "@/styles/Header.css";
+import "@/styles/Home.css";
+import "@/styles/animations.css";
+import { AnimatePresence } from "framer-motion";
+import Head from "next/head";
 
 //fonts
-import { Inter } from 'next/font/google';
-const inter = Inter({ subsets: ['latin'] });
-
+import { Inter } from "next/font/google";
+const inter = Inter({ subsets: ["latin"] });
 
 //metadata
 export const metadata = {
-  title: 'Tejas Benibagde - Portfolio',
-  description: 'This is a Professional portfolio of Tejas Benibagde who is a Full Stack Web Developer',
-  charSet: 'utf-8',
-  name: 'viewport',
-  content: 'width=device-width, initial-scale=1'
-}
+  title: "Tejas Benibagde - Portfolio",
+  description:
+    "This is a Professional portfolio of Tejas Benibagde who is a Full Stack Web Developer",
+  charSet: "utf-8",
+  name: "viewport",
+  content: "width=device-width, initial-scale=1",
+};
 
 //components
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
-import Smoothscroll from './Smoothscroll';
-
+import Smoothscroll from "./Smoothscroll";
 
 export default function App({ Component, pageProps, router }) {
   return (
-    <>
+    <div className="">
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -39,14 +37,14 @@ export default function App({ Component, pageProps, router }) {
         />
         <title>Tejas Benibagde</title>
       </Head>
-      <div id='main-wrapper' className={inter.className}>
+      <div id="main-wrapper" className={inter.className}>
         <Smoothscroll />
         <Header />
-        <AnimatePresence mode='wait'>
+        <AnimatePresence mode="wait">
           <Component key={router.pathname} {...pageProps} />
         </AnimatePresence>
         <Footer />
       </div>
-    </>
-  )
+    </div>
+  );
 }
