@@ -56,37 +56,31 @@ function Form() {
     const { name, email, company, message } = userData;
 
     if (name && email && company && message) {
-      try {
-        const res = await fetch(
-          "https://portfolio-a6190-default-rtdb.firebaseio.com/contact.json",
-          {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-              name,
-              email,
-              company,
-              message,
-            }),
-          }
-        );
-
-        if (res.ok) {
-          setLoader(false);
-          toast("Message sent Successfully!");
-          setUserData({
-            name: "",
-            email: "",
-            company: "",
-            message: "",
-          });
-        } else {
-          setLoader(false);
-          toast.error("Something Went Wrong!!!");
+      const res = await fetch(
+        "https://portfolio-a6190-default-rtdb.firebaseio.com/mails.json",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name,
+            email,
+            company,
+            message,
+          }),
         }
-      } catch (error) {
+      );
+      if (res.ok) {
+        setLoader(false);
+        toast("Message sent Successfully!");
+        setUserData({
+          name: "",
+          email: "",
+          company: "",
+          message: "",
+        });
+      } else {
         setLoader(false);
         toast.error("Something Went Wrong!!!");
       }
