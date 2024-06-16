@@ -20,7 +20,7 @@ function MiniProjects() {
     {
       src: "/images/projects/sxkit.jpg",
       title: ".sxKit",
-      url: "https://weather-caster.netlify.app",
+      url: "https://www.npmjs.com/package/sxkit",
       attribute: "Design & Development",
       date: "2024",
       color: "#0f0f0f",
